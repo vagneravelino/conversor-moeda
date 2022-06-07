@@ -1,0 +1,60 @@
+version: '3'
+
+# Redes Docker
+networks:
+    network-bild-teste:
+        driver: bridge
+        ipam:
+            driver: default
+            config:
+                - subnet: 10.0.40.0/29
+  
+services:
+    db-bild-teste:
+        build:
+            context: ./db
+            dockerfile: Dockerfile
+            args:
+              buildno: 1
+        tty: true
+        container_name: db-bild-teste
+        volumes:
+            - ../db/data:/var/lib/mysql
+        environment: 
+            MYSQL_DATABASE: bild_teste_db
+            MYSQL_ROOT: root
+            MYSQL_ROOT_PASSWORD: 1q2w3e4r
+            MYSQL_PASSWORD: 1q2w3e4r
+        networks:
+            network-bild-teste:
+                ipv4_address: 10.0.40.2
+        ports:
+            - 3308:3306/tcp
+            - 33080:33060/tcp
+        restart:
+            unless-stopped
+    
+    apache2-bild-teste:
+        build:
+            context: ./web
+            dockerfile: Dockerfile
+            args:
+              buildno: 1
+        container_name: web-bild-teste
+        restart: unless-stopped
+        ports:
+            - 80:80/tcp
+        tty: true
+        volumes:
+            - ../app:/var/www/html
+            - ./web/scripts:/home/www/scripts
+            - ./web/conf.d/app/apache2.conf:/etc/apache2/apache2.conf
+            - ./web/conf.d/app/000-default.conf:/etc/apache2/sites-available/000-default.conf
+            - ./web/conf.d/app/php.ini:/usr/local/etc/php/php.ini
+        networks: 
+            network-bild-teste:
+                ipv4_address: 10.0.40.3
+        depends_on:
+            - db-bild-teste
+        links:
+            - db-bild-teste
