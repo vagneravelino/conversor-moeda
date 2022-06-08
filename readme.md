@@ -40,13 +40,13 @@ Para este projeto não foi solicitado um banco de dados, a conversão dos valore
 
 ## Instruções para Execução do Projeto
 
-Selecione um diretório em seu computador para a execuçao do projeto.
+Selecione um diretório em seu computador para a execuçao do projeto.  
 Na pasta selecionada, faça o clone do repositório do [Github.com](https://github.com/vagneravelino/conversor-moeda "Projeto Desafio Conversor de Moeda") usando a linha de comando abaixo:
 
 > $ git clone https://github.com/vagneravelino/conversor-moeda.git
 
 
-Se preferir, pode acessa o repositório do [Github.com](https://github.com/vagneravelino/conversor-moeda "Projeto Desafio Conversor de Moeda"), efetar o download do arquivo .zip e descompactar no diretório de sua escolha.
+Se preferir, pode acessar o repositório do [Github.com](https://github.com/vagneravelino/conversor-moeda "Projeto Desafio Conversor de Moeda"), efetuar o download do arquivo .zip e descompactar no diretório de sua escolha.
 
 ### Servidor Local
 
