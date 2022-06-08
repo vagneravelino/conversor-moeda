@@ -32,8 +32,8 @@
                             <div class="form-floating">
                                 <input type="text" id="txt_origem" value="1.00"
                                     onkeypress="$(this).mask('###0.00', {reverse: true});"
-                                    class="form-control" placeholder="{{ __('Value') }}">
-                                <label for="txt_origem">{{ __('Value') }}</label>
+                                    class="form-control" placeholder="{{ __('Value to Convert') }}">
+                                <label for="txt_origem">{{ __('Value to Convert') }}</label>
                             </div>
                         </div>
 
@@ -67,8 +67,8 @@
 
                         <div class="col-md-3">
                             <div class="form-floating">
-                                <input type="text" readonly value="0,00"id="txt_destino" class="form-control" placeholder="{{ __('Value') }}">
-                                <label for="txt_destino">{{ __('Value') }}</label>
+                                <input type="text" readonly value="0,00"id="txt_destino" class="form-control" placeholder="{{ __('Coverted Value') }}">
+                                <label for="txt_destino">{{ __('Converted Value') }}</label>
                             </div>
                         </div>
 

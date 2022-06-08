@@ -16,5 +16,7 @@
     "Currency": "Moeda",
     "Choose...": "Selecione...",
     "Value": "Valor",
-    "Converter": "Conversor"
+    "Converter": "Conversor",
+    "Converted Value": "Valor Convertido",
+    "Value to Convert": "Valor a Converter"
 }
