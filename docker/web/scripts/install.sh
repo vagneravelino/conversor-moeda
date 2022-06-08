@@ -11,6 +11,8 @@ composer require spatie/laravel-permission:3.17.0
 php artisan ui vue --auth
 
 chmod -R 777 /var/www/html/storage
+chmod -R 777 /var/www/html/bootstrap
+
 echo yes | npm install && npm run dev
 
 chown -R www-data:www-data /var/www/html
